@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#111827" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Pomodoro PWA</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="tab-timer" class="tab-panel active" aria-labelledby="tab-btn-timer">
+        <h1>ポモドーロタイマー</h1>
+        <div class="timer-display-wrap">
+          <p id="phaseLabel" class="phase-label">集中 1/1</p>
+          <p id="timerDisplay" class="timer-display">25:00</p>
+        </div>
+
+        <div id="selectorBlock" class="selector-block">
+          <button class="selector-row" data-selector="focusMin">
+            <span>集中時間（分）</span><strong id="focusMinValue">25</strong><span class="caret">▼</span>
+          </button>
+          <button class="selector-row" data-selector="breakMin">
+            <span>休憩時間（分）</span><strong id="breakMinValue">5</strong><span class="caret">▼</span>
+          </button>
+          <button class="selector-row" data-selector="sets">
+            <span>セット数（回）</span><strong id="setsValue">1</strong><span class="caret">▼</span>
+          </button>
+        </div>
+
+        <div class="main-actions" id="idleActions">
+          <button id="startBtn" class="btn btn-primary btn-large">START</button>
+        </div>
+
+        <div class="main-actions hidden" id="runningActions">
+          <button id="pauseResumeBtn" class="btn btn-secondary">一時停止</button>
+          <button id="endBtn" class="btn btn-danger">終了</button>
+        </div>
+      </section>
+
+      <section id="tab-history" class="tab-panel" aria-labelledby="tab-btn-history">
+        <h2>履歴</h2>
+        <div id="historyList" class="card-list"></div>
+
+        <dialog id="sessionDialog" class="sheet-dialog">
+          <form method="dialog" id="sessionForm" class="sheet-content">
+            <h3>履歴詳細</h3>
+            <label>開始時刻
+              <input id="sessionStart" name="start" type="datetime-local" required />
+            </label>
+            <label>終了時刻
+              <input id="sessionEnd" name="end" type="datetime-local" required />
+            </label>
+            <label>タグ
+              <select id="sessionTag"></select>
+            </label>
+            <label>メモ
+              <textarea id="sessionMemo" rows="4" placeholder="メモを入力"></textarea>
+            </label>
+            <p id="sessionError" class="error-text"></p>
+            <div class="sheet-actions">
+              <button class="btn" value="cancel">閉じる</button>
+              <button id="deleteSessionBtn" type="button" class="btn btn-danger">削除</button>
+              <button id="saveSessionBtn" type="submit" class="btn btn-primary">保存</button>
+            </div>
+          </form>
+        </dialog>
+      </section>
+
+      <section id="tab-tags" class="tab-panel" aria-labelledby="tab-btn-tags">
+        <h2>タグ</h2>
+        <form id="addTagForm" class="inline-form">
+          <input id="newTagName" placeholder="新規タグ名" required />
+          <input id="newTagColor" type="color" value="#4f46e5" />
+          <button class="btn btn-primary" type="submit">追加</button>
+        </form>
+        <div id="tagList" class="card-list"></div>
+      </section>
+
+      <section id="tab-settings" class="tab-panel" aria-labelledby="tab-btn-settings">
+        <h2>設定</h2>
+        <p class="help">デフォルト値を変更できます。</p>
+        <div class="selector-block">
+          <button class="selector-row" data-selector="defaultFocusMin">
+            <span>デフォルト集中時間（分）</span><strong id="defaultFocusMinValue">25</strong><span class="caret">▼</span>
+          </button>
+          <button class="selector-row" data-selector="defaultBreakMin">
+            <span>デフォルト休憩時間（分）</span><strong id="defaultBreakMinValue">5</strong><span class="caret">▼</span>
+          </button>
+          <button class="selector-row" data-selector="defaultSets">
+            <span>デフォルトセット数（回）</span><strong id="defaultSetsValue">1</strong><span class="caret">▼</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-tab" aria-label="メインタブ">
+      <button id="tab-btn-timer" class="tab-btn active" data-tab="timer">タイマー</button>
+      <button id="tab-btn-history" class="tab-btn" data-tab="history">履歴</button>
+      <button id="tab-btn-tags" class="tab-btn" data-tab="tags">タグ</button>
+      <button id="tab-btn-settings" class="tab-btn" data-tab="settings">設定</button>
+    </nav>
+
+    <dialog id="optionSheet" class="sheet-dialog">
+      <div class="sheet-content">
+        <h3 id="sheetTitle">選択</h3>
+        <div id="sheetOptions" class="sheet-options"></div>
+        <button id="closeSheetBtn" class="btn">閉じる</button>
+      </div>
+    </dialog>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
