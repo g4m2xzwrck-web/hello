@@ -1,0 +1,89 @@
+<svg width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="woodland pattern">
+  <rect width="420" height="420" fill="none"/>
+
+  <g opacity="0.24" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(36 46)">
+      <rect x="14" y="54" width="8" height="34" rx="4" fill="#2B2A22" opacity="0.42"/>
+      <circle cx="18" cy="36" r="24" fill="#8FB8B3"/>
+      <path d="M18 18v36M6 30l12 8 12-8" stroke="#2B2A22" stroke-width="2" fill="none" opacity="0.5"/>
+    </g>
+
+    <g transform="translate(130 26)">
+      <rect x="16" y="68" width="7" height="28" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <polygon points="20,14 2,68 38,68" fill="#97C5BC"/>
+      <circle cx="20" cy="30" r="2.4" fill="#2B2A22" opacity="0.45"/>
+      <circle cx="12" cy="45" r="2.4" fill="#2B2A22" opacity="0.45"/>
+      <circle cx="28" cy="50" r="2.4" fill="#2B2A22" opacity="0.45"/>
+    </g>
+
+    <g transform="translate(244 34)">
+      <rect x="14" y="58" width="6" height="34" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <rect x="3" y="14" width="28" height="48" rx="14" fill="#D4D7BB"/>
+      <path d="M17 24v28M12 32l5 5 5-5M12 42l5 5 5-5" stroke="#2B2A22" stroke-width="2" fill="none" opacity="0.45"/>
+    </g>
+
+    <g transform="translate(320 42)">
+      <rect x="13" y="58" width="6" height="28" rx="4" fill="#2B2A22" opacity="0.44"/>
+      <path d="M16 14L4 58h24L16 14z" fill="#F2D7A8"/>
+      <path d="M10 42h12M8 50h16" stroke="#2B2A22" stroke-width="2" opacity="0.38"/>
+    </g>
+
+    <g transform="translate(58 180)">
+      <rect x="14" y="58" width="7" height="32" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <circle cx="18" cy="42" r="5" fill="#97C5BC"/>
+      <circle cx="8" cy="48" r="5" fill="#97C5BC"/>
+      <circle cx="28" cy="48" r="5" fill="#97C5BC"/>
+      <circle cx="4" cy="60" r="5" fill="#97C5BC"/>
+      <circle cx="18" cy="62" r="5" fill="#97C5BC"/>
+      <circle cx="32" cy="60" r="5" fill="#97C5BC"/>
+      <circle cx="12" cy="70" r="5" fill="#97C5BC"/>
+      <circle cx="24" cy="70" r="5" fill="#97C5BC"/>
+    </g>
+
+    <g transform="translate(182 188)">
+      <rect x="14" y="66" width="6" height="30" rx="4" fill="#2B2A22" opacity="0.38"/>
+      <circle cx="17" cy="44" r="24" fill="#EAF4F6"/>
+      <path d="M17 24v46M8 42l9 8 9-8" stroke="#2B2A22" stroke-width="2" fill="none" opacity="0.42"/>
+    </g>
+
+    <g transform="translate(292 194)">
+      <rect x="12" y="58" width="6" height="32" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <rect x="2" y="20" width="26" height="42" rx="13" fill="#D4D7BB"/>
+      <path d="M15 30v22M10 38h10M10 46h10" stroke="#2B2A22" stroke-width="2" opacity="0.42"/>
+    </g>
+
+    <g transform="translate(346 190)">
+      <rect x="12" y="64" width="6" height="30" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <polygon points="15,14 2,64 28,64" fill="#8FB8B3"/>
+      <circle cx="15" cy="30" r="2" fill="#2B2A22" opacity="0.45"/>
+      <circle cx="8" cy="46" r="2" fill="#2B2A22" opacity="0.45"/>
+      <circle cx="22" cy="50" r="2" fill="#2B2A22" opacity="0.45"/>
+    </g>
+
+    <g transform="translate(18 318)">
+      <rect x="14" y="56" width="6" height="26" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <path d="M17 18L4 56h26L17 18z" fill="#F2D7A8"/>
+    </g>
+
+    <g transform="translate(126 300)">
+      <rect x="16" y="58" width="7" height="32" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <circle cx="20" cy="40" r="20" fill="#97C5BC"/>
+      <circle cx="9" cy="45" r="4" fill="#EAF4F6"/>
+      <circle cx="29" cy="46" r="4" fill="#EAF4F6"/>
+      <circle cx="15" cy="54" r="4" fill="#EAF4F6"/>
+      <circle cx="24" cy="57" r="4" fill="#EAF4F6"/>
+    </g>
+
+    <g transform="translate(246 304)">
+      <rect x="15" y="62" width="7" height="28" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <rect x="4" y="22" width="30" height="42" rx="14" fill="#D4D7BB"/>
+      <path d="M19 30v24M11 40l8 6 8-6" stroke="#2B2A22" stroke-width="2" opacity="0.42"/>
+    </g>
+
+    <g transform="translate(332 306)">
+      <rect x="14" y="58" width="6" height="30" rx="4" fill="#2B2A22" opacity="0.4"/>
+      <circle cx="17" cy="42" r="22" fill="#8FB8B3"/>
+      <path d="M17 24v34M9 39l8 8 8-8" stroke="#2B2A22" stroke-width="2" fill="none" opacity="0.44"/>
+    </g>
+  </g>
+</svg>

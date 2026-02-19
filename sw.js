@@ -1,4 +1,4 @@
-const CACHE = 'pwa-cache-v5';
+const CACHE = 'pwa-cache-v7';
 const CACHE_PREFIX = 'pwa-cache-';
 const ASSETS = [
   './',
@@ -8,7 +8,8 @@ const ASSETS = [
   './db.js',
   './manifest.json',
   './icons/icon-192.svg',
-  './icons/icon-512.svg'
+  './icons/icon-512.svg',
+  './assets/pattern.svg'
 ];
 
 self.addEventListener('install', (event) => {
