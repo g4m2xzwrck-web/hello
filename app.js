@@ -140,7 +140,7 @@ function bindEvents() {
     e.preventDefault();
     const name = els.newTagName.value.trim();
     if (!name) return;
-    await add(state.db, 'tags', { name, color: els.newTagColor.value || '#4f46e5' });
+    await add(state.db, 'tags', { name, color: els.newTagColor.value || '#8fb8b3' });
     els.newTagName.value = '';
     await refreshAll();
   });
@@ -336,7 +336,7 @@ function renderHistory() {
     card.className = 'card';
     card.innerHTML = `<div><strong>${fmtDateTime(s.startTs)}</strong></div>
       <small>${Math.floor(s.durationSec / 60)}分 ${s.durationSec % 60}秒 / pause ${s.pauseTotalSec}s</small>
-      <div><span class="tag-dot" style="background:${tag?.color || '#64748b'}"></span>${tag?.name || '未設定'}</div>`;
+      <div><span class="tag-dot" style="background:${tag?.color || '#8fb8b3'}"></span>${tag?.name || '未設定'}</div>`;
     card.addEventListener('click', () => openSessionDialog(s.id));
     els.historyList.appendChild(card);
   });
@@ -347,7 +347,7 @@ function renderTags() {
   state.tags.forEach((tag) => {
     const row = document.createElement('div');
     row.className = 'card tag-row';
-    row.innerHTML = `<div><span class="tag-dot" style="background:${tag.color || '#64748b'}"></span>${tag.name}</div>`;
+    row.innerHTML = `<div><span class="tag-dot" style="background:${tag.color || '#8fb8b3'}"></span>${tag.name}</div>`;
     const tools = document.createElement('div');
     tools.className = 'tag-tools';
 
@@ -359,7 +359,7 @@ function renderTags() {
     });
 
     const colorBtn = mkBtn('色', async () => {
-      const color = prompt('色コード（#rrggbb）', tag.color || '#4f46e5')?.trim();
+      const color = prompt('色コード（#rrggbb）', tag.color || '#8fb8b3')?.trim();
       if (!color) return;
       await put(state.db, 'tags', { ...tag, color });
       await refreshAll();
