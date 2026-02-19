@@ -74,7 +74,9 @@ const els = {
   sessionTag: $('#sessionTag'),
   sessionMemo: $('#sessionMemo'),
   sessionError: $('#sessionError'),
-  deleteSessionBtn: $('#deleteSessionBtn')
+  deleteSessionBtn: $('#deleteSessionBtn'),
+  swUpdateBanner: $('#swUpdateBanner'),
+  swUpdateReloadBtn: $('#swUpdateReloadBtn')
 };
 
 init();
@@ -466,7 +468,52 @@ function toLocalInputValue(ts) {
 }
 
 function registerSw() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('SW registration failed', e));
-  }
+  if (!('serviceWorker' in navigator)) return;
+
+  let hasReloadedForUpdate = false;
+  let pendingWorker = null;
+
+  const showBanner = () => {
+    if (!els.swUpdateBanner) return;
+    els.swUpdateBanner.classList.remove('hidden');
+  };
+
+  const requestActivation = () => {
+    if (pendingWorker) {
+      pendingWorker.postMessage({ type: 'SKIP_WAITING' });
+      return;
+    }
+    window.location.reload();
+  };
+
+  navigator.serviceWorker
+    .register('./sw.js', { updateViaCache: 'none' })
+    .then((registration) => {
+      registration.update().catch(() => {});
+
+      if (registration.waiting) {
+        pendingWorker = registration.waiting;
+        showBanner();
+      }
+
+      registration.addEventListener('updatefound', () => {
+        const installingWorker = registration.installing;
+        if (!installingWorker) return;
+        installingWorker.addEventListener('statechange', () => {
+          if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            pendingWorker = registration.waiting || installingWorker;
+            showBanner();
+          }
+        });
+      });
+
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (hasReloadedForUpdate) return;
+        hasReloadedForUpdate = true;
+        window.location.reload();
+      });
+
+      els.swUpdateReloadBtn?.addEventListener('click', requestActivation);
+    })
+    .catch((e) => console.warn('SW registration failed', e));
 }
