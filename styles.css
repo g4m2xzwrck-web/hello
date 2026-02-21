@@ -22,8 +22,11 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--paper) url('assets/pattern.svg') repeat;
-  background-size: 420px;
+  background-color: #F5F2E9;
+  background-image: url("assets/background.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
   color: var(--ink);
 }
 
