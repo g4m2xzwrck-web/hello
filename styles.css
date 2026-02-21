@@ -31,8 +31,19 @@ body {
 }
 
 .app-shell {
+  position: relative;
+  z-index: 1;
   padding: calc(18px + env(safe-area-inset-top)) 16px calc(108px + env(safe-area-inset-bottom));
   min-height: 100vh;
+}
+
+.app-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(245, 242, 233, 0.62);
+  pointer-events: none;
+  z-index: -1;
 }
 
 h1,
@@ -160,6 +171,7 @@ strong { color: var(--ink); }
 .bottom-tab {
   position: fixed;
   inset: auto 0 0;
+  z-index: 10;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background: rgba(245, 242, 233, 0.96);
